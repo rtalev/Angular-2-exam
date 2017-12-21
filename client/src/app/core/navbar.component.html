@@ -1,0 +1,11 @@
+<nav>
+  <ul class="nav">
+    <li><a routerLink="/">Home</a></li>
+    <li><a routerLink="/animals/all">Animals</a></li>
+    <li><a routerLink="/about">About</a></li>
+    <li *ngIf="Auth.getName()"><a routerLink="/users/profile">Hello, {{Auth.getName()}}</a></li>
+    <li *ngIf="Auth.getName()"><a routerLink="/" (click)="logoutUser($event)">Logout</a></li>
+    <li *ngIf="!Auth.getName()"><a routerLink="/users/register">Register</a></li>
+    <li *ngIf="!Auth.getName()"><a routerLink="/users/login">Login</a></li>
+  </ul>
+</nav>

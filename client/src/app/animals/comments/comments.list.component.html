@@ -1,0 +1,7 @@
+<h2>comments component</h2>
+<h4 *ngIf="comments?.length === 0" [style.color]="'red'">No comments for this animal</h4>
+<div *ngFor="let comment of comments">
+  <h4>Comment by: {{comment?.user}}</h4>
+  <p>{{comment?.message}}</p>
+  <h5>Date: {{comment?.createdOn | date: 'medium'}}</h5>
+</div>

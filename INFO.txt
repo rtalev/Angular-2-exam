@@ -1,0 +1,5 @@
+-- npm packages are installed in both server and client
+-- client listening on port 4200 (stardart for angular 2 application)
+-- run the server with "npm start" command
+-- server listening on port 5000
+-- server uses in-memory database so if you restart it, all the data will be lost and you will need to populate it again.

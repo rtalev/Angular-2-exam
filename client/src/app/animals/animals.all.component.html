@@ -1,0 +1,27 @@
+<div class="all-animals-container">
+  <h2>All Animals</h2>
+  <button><a routerLink="/animals/create">Add animal</a></button>
+  <div [style.margin.px]="10">
+    <form #searchForm="ngForm" (ngSubmit)="onSearch()">
+      <label for="search">Search for animal</label>
+      <input type="text" id="search" name="search" [(ngModel)]="search"/>
+      <input type="submit" value="Search" />
+    </form>
+
+  </div>
+  <div *ngIf="animals?.length === 0">
+    <h2>No more animals to show!</h2>
+  </div>
+  <div *ngFor="let animal of animals" class="animal-box">
+    <img src="{{animal?.image}}" [style.maxWidth.px]="420" />
+    <h3>Type: {{animal?.type}}</h3>
+    <p>name: {{animal?.name}}</p>
+    <button><a routerLink="{{'/animals/details/' + animal?.id}}">View more</a></button>
+  </div>
+  <div>
+    <button *ngIf="!(page === 1)"><a (click)="prevPage($event)">Prev</a></button>
+    <span>{{page}}</span>
+    <button *ngIf="!(animals?.length < 10)"><a (click)="nextPage($event)">Next</a></button>
+  </div>
+</div>
+

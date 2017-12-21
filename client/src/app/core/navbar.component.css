@@ -1,0 +1,14 @@
+nav {
+  margin: 0 auto;
+  width: 50%;
+}
+.nav {
+  margin: 0 auto;
+}
+
+.nav li {
+  font-size: 1.2em;
+  display: inline-block;
+  text-decoration: none;
+  padding-left: 5px;
+}

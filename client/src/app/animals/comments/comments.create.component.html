@@ -1,0 +1,10 @@
+<form class="comment-form" (ngSubmit)="onSubmit()" #commentForm="ngForm">
+  <h3>Comment form</h3>
+  <label for="message">Your comment here:</label>
+  <textarea id="message" name="message" [(ngModel)]="comment.message" cols="60" rows="10" maxlength="500"></textarea>
+  <div>
+    <input type="submit" value="Add comment" />
+    <button><a routerLink="{{'/animals/details/' + animalId}}">Cancel</a></button>
+  </div>
+</form>
+
